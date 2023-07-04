@@ -1,0 +1,26 @@
+{% extends 'layout.html' %}
+{% load crispy_forms_tags %}
+{% block title %}
+    <title> show Grocery </title>
+{% endblock %}
+
+{% block content %}
+<table class="table table-dark">
+    <thead>
+        <tr>
+            <th>Grocery items</th>
+            <th>Price</th>
+            <th>Date</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for obj in obj %}
+        <tr>
+            <td>{{obj.groceryitems}}</td>
+            <td>{{obj.price}}</td>
+            <td>{{obj.date}}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}
