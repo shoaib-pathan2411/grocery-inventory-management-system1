@@ -3,10 +3,10 @@ from .models import Grocery
 
 class GroceryForm(forms.ModelForm):
     class Meta:
+        Discounts = forms.CharField(label='2%')
         model = Grocery
-        fields = '__all__'
-        lables = {
-            'groceryitems':forms.CharField(max_length=50),
-            'price':forms.FloatField(),
-            'date' : forms.DateField(widget=forms.DateField)
+        fields = ['groceryitems', 'price', 'date']
+        widgets = {
+            'groceryitems':forms.TextInput(),
+            'date' :forms.DateInput(attrs={'type': 'date'})
         }
