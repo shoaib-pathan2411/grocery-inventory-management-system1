@@ -7,7 +7,5 @@ class Grocery(models.Model):
     Discounts = models.IntegerField()
     date = models.DateField()
 
-class Discount(models.Model):
-    discountpercentage = models.FloatField()
-    Date = models.DateField(auto_now_add=True)
+
 
